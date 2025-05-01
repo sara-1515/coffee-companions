@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coffee Pairing Guide - Coffee Companions</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Coffee pairing guide - learn what foods pair best with different coffee varieties.">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>        
+    </head>
+    <style>
+        body{
+            background-color: #251313; 
+            font-family: Arial, sans-serif; 
+            color: #ffffff;
+        }
+        .navbar{
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: #ffffff;
+            background-color: #ffff3333;
+        }
+
+        .nav-pills .nav-link, .nav-pills .show>.nav-link{
+            color: #ffffff;
+        }
+        
+        .navbar a{
+            color: #ffffff;
+        }
+
+        .navbar a :hover{
+            color: #ffff3333;
+        }
+
+        .nav-link {
+            display: block;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .banner-container {
+            background-color: #251313;
+            max-width: 100%;
+            height: 400px;
+            display: flex;
+            margin-right: 0%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
+
+        .banner-heading {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            text-shadow: 0 0 10px rgba(212, 167, 106, 0.3);
+            font-size: 80px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pairing-intro {
+            font-family: "Comic Relief", system-ui;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1.6;
+            margin: 20px auto 50px;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .pairing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+
+        .pairing-card {
+            width: 320px;
+            background-color: #220000;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .pairing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .pairing-card-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .pairing-card-content {
+            padding: 25px;
+        }
+
+        .pairing-card h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .pairing-card h4 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 22px;
+            margin: 15px 0 10px;
+        }
+
+        .pairing-card p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .pairing-list {
+            list-style-type: none;
+            padding-left: 5px;
+            margin-bottom: 20px;
+        }
+
+        .pairing-list li {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .pairing-list li:before {
+            content: "➤";
+            color: #d9b582;
+            position: absolute;
+            left: 0;
+        }
+
+        .pairing-tips {
+            background-color: #1a0d0d;
+            padding: 60px 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .pairing-tips h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tips-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            width: 260px;
+            background-color: #251313;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: scale(1.05);
+        }
+
+        .tip-icon {
+            font-size: 40px;
+            color: #d9b582;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .tip-card p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .interactive-section {
+            background-color: #1a0d0d;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .interactive-section h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 60px;
+            margin-bottom: 30px;
+        }
+
+        .interactive-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #251313;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d9b582;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background-color: #302020;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .form-group select:focus {
+            outline: 2px solid #d9b582;
+        }
+
+        .submit-btn {
+            background-color: #d9b582;
+            color: #251313;
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffffff;
+        }
+
+        #pairingResult {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #302020;
+            display: none;
+        }
+
+        #pairingResult h3 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        #pairingResult p {
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+    <body>
+        <header class="navbar">
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="index.html#types" class="nav-link">Types</a></li>
+              <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="index.html#reviews" class="nav-link">Reviews</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+
+        <div class="banner-container">
+            <h1 class="banner-heading">Coffee Pairing Guide</h1>
+        </div>
+
+        <p class="pairing-intro">
+            Coffee, like wine, has a complex flavor profile that can be enhanced when paired with the right foods.
+            Whether you're hosting a coffee tasting event or simply looking to elevate your morning brew,
+            our guide will help you discover perfect flavor combinations that complement and enhance your
+            Coffee Companions experience.
+        </p>
+
+        <div class="pairing-container">
+            <div class="pairing-card">
+                <img src="./images/light-roast.jpg" alt="Light Roast Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Light Roast</h2>
+                    <p>Light roasts feature bright acidity and delicate floral or fruity notes. Their subtle complexity pairs beautifully with:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Fresh fruit tarts</li>
+                        <li>Lemon pound cake</li>
+                        <li>Shortbread cookies</li>
+                        <li>Vanilla scones</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Mild cheeses like brie</li>
+                        <li>Egg dishes</li>
+                        <li>Avocado toast</li>
+                        <li>Croissants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pairing-card">
+                <img src="./images/medium-roast.jpg" alt="Medium Roast Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Medium Roast</h2>
+                    <p>Medium roasts offer balanced flavors with nutty or caramel notes and moderate acidity. They pair wonderfully with:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Caramel desserts</li>
+                        <li>Cinnamon rolls</li>
+                        <li>Chocolate chip cookies</li>
+                        <li>Apple pastries</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Breakfast sandwiches</li>
+                        <li>Toasted nuts</li>
+                        <li>Aged cheeses</li>
+                        <li>French toast</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pairing-card">
+                <img src="./images/dark-roast.jpg" alt="Dark Roast Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Dark Roast</h2>
+                    <p>Dark roasts feature bold, rich flavors with smoky or chocolate undertones. Their robust character complements:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Dark chocolate desserts</li>
+                        <li>Tiramisu</li>
+                        <li>Pecan pie</li>
+                        <li>Chocolate truffles</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Smoked meats</li>
+                        <li>Blue cheese</li>
+                        <li>Dark bread</li>
+                        <li>Spicy dishes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pairing-card">
+                <img src="./images/espress.jpg" alt="Espresso Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Espresso</h2>
+                    <p>Concentrated and intense, espresso has deep flavors that stand up well to stronger taste profiles:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Biscotti</li>
+                        <li>Chocolate-dipped biscuits</li>
+                        <li>Cannoli</li>
+                        <li>Baklava</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Almond croissants</li>
+                        <li>Sharp cheeses</li>
+                        <li>Savory pastries</li>
+                        <li>Prosciutto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pairing-card">
+                <img src="./images/flavoured-coffee.jpg" alt="Flavored Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Flavored Coffee</h2>
+                    <p>Flavored coffees like vanilla, hazelnut, or caramel need complementary pairings that won't overwhelm:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Plain butter cookies</li>
+                        <li>Angel food cake</li>
+                        <li>Vanilla ice cream</li>
+                        <li>Simple pastries</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Plain bagels</li>
+                        <li>Cream cheese</li>
+                        <li>Mild crackers</li>
+                        <li>Butter croissants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pairing-card">
+                <img src="./images/cold brew.jpg" alt="Cold Brew Coffee" class="pairing-card-image">
+                <div class="pairing-card-content">
+                    <h2>Cold Brew</h2>
+                    <p>Smooth and less acidic, cold brew's gentle sweetness pairs beautifully with:</p>
+                    <h4>Sweet Treats</h4>
+                    <ul class="pairing-list">
+                        <li>Berry tarts</li>
+                        <li>Chocolate mousse</li>
+                        <li>Coconut macaroons</li>
+                        <li>Caramel brownies</li>
+                    </ul>
+                    <h4>Savory Options</h4>
+                    <ul class="pairing-list">
+                        <li>Chicken salad sandwiches</li>
+                        <li>Greek yogurt</li>
+                        <li>Fruit and cheese plates</li>
+                        <li>Summer salads</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pairing-tips">
+            <h2>Coffee Pairing Tips</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Balance is Key</h3>
+                    <p>Pair delicate coffees with subtle foods, and robust coffees with more flavorful options to ensure neither overpowers the other.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3>Contrast Textures</h3>
+                    <p>Create interest by pairing smooth coffee with crunchy foods, or creamy coffee drinks with foods that have some texture.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Regional Pairings</h3>
+                    <p>Foods from the same region as your coffee often pair naturally well together due to shared flavor traditions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3>Temperature Matters</h3>
+                    <p>The temperature of your coffee affects how flavors are perceived. Warmer coffee emphasizes acidity, while cooler coffee highlights sweetness.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Find Your Perfect Pairing</h2>
+            <div class="interactive-form">
+                <form id="pairingForm" onsubmit="return showPairing(event)">
+                    <div class="form-group">
+                        <label for="coffeeType">Choose Your Coffee:</label>
+                        <select id="coffeeType" required>
+                            <option value="" disabled selected>Select your coffee</option>
+                            <option value="ethiopian">Ethiopian Yirgacheffe</option>
+                            <option value="colombian">Colombian Supremo</option>
+                            <option value="sumatra">Sumatra Mandheling</option>
+                            <option value="jamaican">Jamaican Blue Mountain</option>
+                            <option value="espresso">Espresso Blend</option>
+                            <option value="coldBrew">Cold Brew</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodPreference">Food Preference:</label>
+                        <select id="foodPreference" required>
+                            <option value="" disabled selected>Select food type</option>
+                            <option value="sweet">Sweet</option>
+                            <option value="savory">Savory</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="fruit">Fruit-based</option>
+                            <option value="nuts">Nuts</option>
+                            <option value="cheese">Cheese</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Pairing Suggestion</button>
+                </form>
+                <div id="pairingResult">
+                    <h3>Your Perfect Pairing</h3>
+                    <p id="pairingText"></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showPairing(event) {
+                event.preventDefault();
+                
+                const coffeeType = document.getElementById('coffeeType').value;
+                const foodPreference = document.getElementById('foodPreference').value;
+                const resultElement = document.getElementById('pairingResult');
+                const pairingText = document.getElementById('pairingText');
+                
+                const pairings = {
+                    ethiopian: {
+                        sweet: "The bright, citrusy notes of Ethiopian Yirgacheffe pair wonderfully with lemon tarts or light vanilla cake. The coffee's floral undertones complement the sweetness without overwhelming it.",
+                        savory: "Try pairing your Ethiopian Yirgacheffe with a light breakfast like avocado toast or a vegetable quiche. The coffee's brightness cuts through the savory flavors beautifully.",
+                        chocolate: "White chocolate or milk chocolate with fruity notes makes an excellent companion to Ethiopian Yirgacheffe, enhancing its natural berry undertones.",
+                        fruit: "Berries and stone fruits like peaches complement Ethiopian Yirgacheffe perfectly. Try a mixed berry tart or peach pastry for an exceptional pairing.",
+                        nuts: "Lightly toasted almonds or macadamia nuts pair well with Ethiopian Yirgacheffe, adding a pleasant texture contrast without overshadowing the coffee's delicate profile.",
+                        cheese: "Fresh, creamy cheeses like ricotta or fresh mozzarella make ideal companions to Ethiopian Yirgacheffe, allowing its complex flavors to shine."
+                    },
+                    colombian: {
+                        sweet: "Colombian Supremo's nutty undertones and caramel sweetness make it perfect with cinnamon rolls, coffee cake, or caramel desserts.",
+                        savory: "Breakfast sandwiches with eggs and cheese complement Colombian Supremo's balanced profile wonderfully. The coffee's subtle nuttiness enhances savory breakfast foods.",
+                        chocolate: "Milk chocolate with nuts or caramel pairs beautifully with Colombian Supremo, enhancing its inherent sweetness and nutty profile.",
+                        fruit: "Apple pastries or pear tarts match well with Colombian Supremo. The fruit's natural sweetness complements the coffee's caramel notes.",
+                        nuts: "Walnuts or pecans are excellent companions to Colombian Supremo, emphasizing its nutty characteristics and creating flavor harmony.",
+                        cheese: "Medium-aged cheeses like Gouda pair wonderfully with Colombian Supremo, creating a balanced flavor experience."
+                    },
+                    sumatra: {
+                        sweet: "Dark chocolate brownies or chocolate cake with minimal sweetness pair perfectly with Sumatra Mandheling's earthy, full-bodied profile.",
+                        savory: "Smoked meats or aged cheese complement Sumatra Mandheling's robust character. Try it with a breakfast featuring smoked salmon or ham.",
+                        chocolate: "Dark chocolate with at least 70% cacao is the perfect match for Sumatra Mandheling, complementing its bold, earthy character.",
+                        fruit: "Dried fruits like dates or figs pair well with Sumatra Mandheling, their concentrated sweetness balancing the coffee's intensity.",
+                        nuts: "Roasted hazelnuts or smoked almonds enhance Sumatra Mandheling's earthy qualities and stand up to its bold flavor profile.",
+                        cheese: "Blue cheese or aged cheddar creates a powerful flavor combination with Sumatra Mandheling's full-bodied intensity."
+                    },
+                    jamaican: {
+                        sweet: "Light, buttery shortbread or vanilla bean pastries enhance Jamaican Blue Mountain's exceptional smoothness and subtle chocolate notes.",
+                        savory: "Delicate pastries like croissants or brioche make perfect companions to Jamaican Blue Mountain, complementing its refined flavor profile.",
+                        chocolate: "High-quality milk chocolate truffles pair beautifully with Jamaican Blue Mountain, matching its smooth, refined character.",
+                        fruit: "Fresh berries or stone fruits complement Jamaican Blue Mountain's clean profile, adding a pleasant brightness to the experience.",
+                        nuts: "Lightly salted cashews or marcona almonds make excellent companions to Jamaican Blue Mountain, enhancing its subtle nutty undertones.",
+                        cheese: "Mild, creamy cheeses like brie pair wonderfully with Jamaican Blue Mountain, creating a luxurious tasting experience."
+                    },
+                    espresso: {
+                        sweet: "Traditional Italian biscotti or amaretti cookies are perfect for dipping in espresso, creating a classic pairing that enhances both flavors.",
+                        savory: "Savory breakfast pastries or a slice of frittata complement espresso's intensity. The coffee cuts through the richness beautifully.",
+                        chocolate: "Dark chocolate with orange or spice notes pairs exceptionally well with espresso, creating a sophisticated flavor combination.",
+                        fruit: "Candied orange peel or chocolate-covered dried cherries make excellent companions to espresso, complementing its concentrated flavor.",
+                        nuts: "Roasted hazelnuts or almond biscotti are traditional pairings with espresso, offering complementary flavors and textures.",
+                        cheese: "Sharp aged cheeses like Parmigiano-Reggiano create an interesting contrast with espresso's bold profile."
+                    },
+                    coldBrew: {
+                        sweet: "Chocolate mousse or tiramisu pairs beautifully with cold brew's smooth, less acidic profile. The coffee's natural sweetness enhances these desserts.",
+                        savory: "Light sandwiches or fresh salads make excellent companions to cold brew coffee, especially during warmer weather.",
+                        chocolate: "Milk chocolate or chocolate with sea salt pairs wonderfully with cold brew, complementing its smooth character and subtle sweetness.",
+                        fruit: "Berry parfaits or fruit tarts create a refreshing pairing with cold brew, the fruit's acidity balancing the coffee's smooth profile.",
+                        nuts: "Candied nuts or chocolate-covered almonds enhance cold brew's mellow sweetness, creating a satisfying flavor combination.",
+                        cheese: "Cream cheese on a bagel or a mild goat cheese make ideal companions to cold brew, offering complementary creamy textures."
+                    }
+                };
+                
+                if (pairings[coffeeType] && pairings[coffeeType][foodPreference]) {
+                    pairingText.textContent = pairings[coffeeType][foodPreference];
+                    resultElement.style.display = 'block';
+                } else {
+                    pairingText.textContent = "We don't have a specific recommendation for this combination. Try another selection!";
+                    resultElement.style.display = 'block';
+                }
+                
+                return false;
+            }
+        </script>
+    </body>
+</html>

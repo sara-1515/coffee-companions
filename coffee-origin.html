@@ -1,0 +1,584 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Coffee Origins | My Coffee Companions</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore the rich history and global origins of coffee from around the world.">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>        
+    </head>
+    <style>
+        body{
+            background-color: #251313; 
+            font-family: Arial, sans-serif; 
+            color: #ffffff;
+        }
+        .navbar{
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: #ffffff;
+            background-color: #ffff3333;
+        }
+
+        .nav-pills .nav-link, .nav-pills .show>.nav-link{
+            color: #ffffff;
+        }
+        
+        .navbar a{
+            color: #ffffff;
+        }
+
+        .navbar a :hover{
+            color: #ffff3333;
+        }
+
+        .nav-link {
+            display: block;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .hero-container {
+            background-color: #251313;
+            max-width: 100%;
+            height: 500px;
+            display: flex;
+            margin-right: 0%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
+
+        .hero-image img {
+            height: 400px;
+            width: auto;
+            border-radius: 20px;
+            margin-right: 100px;
+        }
+        
+        .hero-heading {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            text-shadow: 0 0 10px rgba(212, 167, 106, 0.3);
+            font-size: 80px;
+            margin-left: 90px;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .timeline-heading {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #d9b582;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: #310e0e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(217, 181, 130, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #d9b582;
+            border-radius: 50%;
+            top: 20px;
+            right: -13px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        .timeline-date {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .timeline-title {
+            margin: 10px 0;
+            color: #d9b582;
+            font-size: 22px;
+        }
+
+        .timeline-text {
+            color: #ffffff;
+            font-family: "Comic Relief", system-ui;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .regions-container {
+            padding: 50px 20px;
+            background-color: #1a0d0d;
+        }
+
+        .regions-heading {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .region-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .region-card {
+            width: 300px;
+            background-color: #310e0e;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(217, 181, 130, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .region-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .region-image {
+            height: 200px;
+            background-color: #d9b582;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #251313;
+        }
+
+        .region-content {
+            padding: 20px;
+        }
+
+        .region-title {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .region-text {
+            color: #ffffff;
+            font-family: "Comic Relief", system-ui;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .region-characteristics {
+            background-color: #251313;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .region-characteristics h4 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .characteristics-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .characteristics-list li {
+            padding: 5px 0;
+            color: #d9b582;
+            font-size: 14px;
+        }
+
+        .characteristics-list li::before {
+            content: "•";
+            color: #d9b582;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .fun-facts {
+            padding: 80px 20px;
+            background-color: #251313;
+        }
+
+        .fun-facts h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d9b582;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .facts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            width: 250px;
+            height: 250px;
+            background-color: #310e0e;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(217, 181, 130, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .fact-icon {
+            font-size: 40px;
+            color: #d9b582;
+            margin-bottom: 15px;
+        }
+
+        .fact-text {
+            color: #ffffff;
+            font-family: "Comic Relief", system-ui;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .hero-heading {
+                margin-left: 0;
+                text-align: center;
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+
+            .hero-image img {
+                margin-right: 0;
+                height: 300px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+
+            .region-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+    <body>
+        <header class="navbar">
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="index.html#types" class="nav-link">Types</a></li>
+              <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="index.html#reviews" class="nav-link">Reviews</a></li>
+              <li class="nav-item"><a href="coffee-origins.html" class="nav-link active" aria-current="page">Origins</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+
+        <div class="hero-container">
+            <h1 class="hero-heading">The Rich History & Origins of Coffee</h1>
+            <div class="hero-image">
+                <img src="./images/coffee-beans.jpg" alt="Coffee beans from around the world">
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <h2 class="timeline-heading">Coffee Through The Ages</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">850 CE</div>
+                        <h3 class="timeline-title">The Legend of Kaldi</h3>
+                        <p class="timeline-text">According to Ethiopian legend, a goat herder named Kaldi discovered coffee after noticing his goats became energetic after eating berries from a certain tree. Kaldi reported his findings to the local monastery, where monks made a drink with the berries, allowing them to stay awake during long hours of prayer.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1400s</div>
+                        <h3 class="timeline-title">Coffee Cultivation in Yemen</h3>
+                        <p class="timeline-text">Coffee cultivation and trade began on the Arabian Peninsula. By the 15th century, coffee was being grown in the Yemeni district of Arabia, and by the 16th century, it was known in Persia, Egypt, Syria, and Turkey.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1600s</div>
+                        <h3 class="timeline-title">European Coffee Houses</h3>
+                        <p class="timeline-text">Coffee made its way to Europe and coffeehouses became centers of social activity and communication. In major cities like Venice, London, and Paris, these establishments were nicknamed "penny universities" because patrons could purchase a cup of coffee for a penny and engage in stimulating conversation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1700s</div>
+                        <h3 class="timeline-title">Global Expansion</h3>
+                        <p class="timeline-text">Coffee plants spread to the New World through colonial powers. The French introduced coffee to the Caribbean, the Spanish to Central America, and the Portuguese to Brazil. Coffee plantations expanded rapidly as demand increased throughout Europe and America.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1800s</div>
+                        <h3 class="timeline-title">Industrial Revolution</h3>
+                        <p class="timeline-text">The Industrial Revolution brought innovations in coffee brewing and processing. Various patents for coffee roasting machines, espresso machines, and vacuum coffee makers were filed during this period, making coffee more accessible to the masses.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1900s to Present</div>
+                        <h3 class="timeline-title">Modern Coffee Culture</h3>
+                        <p class="timeline-text">The 20th century saw the rise of instant coffee, commercial coffee chains, and specialty coffee movements. Today, coffee is the second most traded commodity after oil, with millions of people worldwide involved in growing, processing, trading, and preparing coffee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="regions-container">
+            <h2 class="regions-heading">Major Coffee Growing Regions</h2>
+            <div class="region-card-container">
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Ethiopia</h3>
+                        <p class="region-text">The birthplace of coffee, Ethiopia produces some of the world's most distinctive and highly valued coffees with extraordinary diversity of flavors.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Bright fruit notes (blueberry, strawberry)</li>
+                                <li>Floral aromatics (jasmine, bergamot)</li>
+                                <li>Wine-like acidity</li>
+                                <li>Medium body with honey sweetness</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Colombia</h3>
+                        <p class="region-text">Colombia's geography provides ideal growing conditions, producing consistently excellent coffee known for its rich flavor and medium acidity.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Caramel sweetness</li>
+                                <li>Nutty undertones (walnut, hazelnut)</li>
+                                <li>Chocolate notes</li>
+                                <li>Clean, balanced finish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-volcano"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Central America</h3>
+                        <p class="region-text">Including Guatemala, Costa Rica, and Honduras, this region produces bright, clean coffees with distinctive regional characteristics.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Bright citrus acidity</li>
+                                <li>Apple and pear notes</li>
+                                <li>Cinnamon and spice undertones</li>
+                                <li>Clean, crisp finish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Brazil</h3>
+                        <p class="region-text">The world's largest coffee producer, Brazil is known for its low-acidity coffees with nutty, chocolate notes and full bodies.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Pronounced nuttiness</li>
+                                <li>Milk chocolate sweetness</li>
+                                <li>Low acidity</li>
+                                <li>Full, creamy body</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Indonesia</h3>
+                        <p class="region-text">Indonesian islands like Sumatra, Java, and Sulawesi produce distinct coffees with earthy, spicy profiles and full bodies.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Earthy, woody notes</li>
+                                <li>Herbal and spice characters</li>
+                                <li>Low acidity</li>
+                                <li>Full, syrupy body</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-card">
+                    <div class="region-image">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="region-content">
+                        <h3 class="region-title">Yemen</h3>
+                        <p class="region-text">One of the oldest coffee-growing regions, Yemen produces distinctive, complex coffees with a unique dry processing method.</p>
+                        <div class="region-characteristics">
+                            <h4>Flavor Profile</h4>
+                            <ul class="characteristics-list">
+                                <li>Dried fruit notes (date, fig)</li>
+                                <li>Spicy undertones (cardamom, cinnamon)</li>
+                                <li>Wine-like complexity</li>
+                                <li>Rustic, wild character</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fun-facts">
+            <h2>Coffee Fun Facts</h2>
+            <div class="facts-container">
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <p class="fact-text">Coffee is the second most traded commodity in the world, following only crude oil.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <p class="fact-text">It takes about 37 gallons of water to grow enough coffee beans for one cup of coffee.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="fact-text">Moderate coffee consumption (3-5 cups daily) has been linked to a longer lifespan and reduced risk of several diseases.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <p class="fact-text">There are two main species of coffee plant: Arabica (higher quality) and Robusta (higher caffeine).</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

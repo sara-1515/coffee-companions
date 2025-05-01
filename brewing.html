@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A website dedicated to coffee lovers, featuring various coffee companions.">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            body {
+                background-color: #251313;
+                font-family: 'Dancing Script', cursive;
+                color: #ffffff;
+                margin: 0;
+                padding: 0;
+            }
+            
+            h1 {
+                display: flex;
+                font-family: 'Dancing Script', cursive;
+                font-size: 60px;
+                justify-content: center;
+                margin: 40px;
+                text-align: center;
+            }
+            
+            h4 {
+                display: flex;
+                font-family: 'Dancing Script', cursive;
+                font-size: 30px;
+                justify-content: center;
+                margin: 20px;
+                text-align: center;
+            }
+            
+            .intro {
+                margin-bottom: 60px;
+                padding: 0 20px;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: hidden;
+            }
+
+            .intro img {
+                float: left;
+                margin: 0 40px 40px 0;
+                height: 300px;
+                width: 400px;
+                border-radius: 30px;
+                object-fit: cover;
+            }
+
+            .intro p {
+                font-size: 24px;
+                margin-top: 30px;
+                line-height: 1.5;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            
+            .cards-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                padding: 20px;
+                margin: 0 auto;
+            }
+            
+            .card {
+                background-color: rgb(255, 255, 255);
+                border-radius: 15px;
+                overflow: hidden;
+                width: 280px;
+                height: 350px;
+                display: flex;
+                flex-direction: column;
+                color: #251313;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+                position: relative;
+            }
+            
+            .card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .card-img-container {
+                width: 100%;
+                height: 180px;
+                overflow: hidden;
+            }
+            
+            .card-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .card-content {
+                padding: 15px;
+                text-align: center;
+            }
+            
+            .card h2 {
+                margin-top: 10px;
+                margin-bottom: 15px;
+                font-size: 28px;
+                text-align: center;
+            }
+            
+            .card p {
+                font-size: 20px;
+                text-align: center;
+                margin: 0;
+            }
+            
+            /* Modal styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.8);
+                animation: fadeIn 0.3s ease;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .modal-content {
+                background-color: #3a2121;
+                margin: 5% auto;
+                padding: 30px;
+                border-radius: 20px;
+                width: 80%;
+                max-width: 800px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+                color: #fff;
+                position: relative;
+                animation: slideIn 0.4s ease;
+            }
+            
+            @keyframes slideIn {
+                from { transform: translateY(-50px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            
+            .close-button {
+                position: absolute;
+                top: 15px;
+                right: 25px;
+                color: #af8c70;
+                font-size: 35px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: color 0.2s;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .close-button:hover {
+                color: #fff;
+            }
+            
+            .modal-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #af8c70;
+                padding-bottom: 15px;
+            }
+            
+            .modal-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 20px;
+                border: 3px solid #af8c70;
+            }
+            
+            .modal-title {
+                font-size: 40px;
+                color: #af8c70;
+                margin: 0;
+            }
+            
+            .modal-body {
+                font-family: 'Poppins', sans-serif;
+                line-height: 1.7;
+            }
+            
+            .modal-body h3 {
+                color: #af8c70;
+                font-size: 24px;
+                margin-top: 25px;
+                margin-bottom: 15px;
+                font-family: 'Dancing Script', cursive;
+                font-weight: bold;
+            }
+            
+            .modal-body p {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            
+            .brewing-steps {
+                background-color: #2a1818;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            
+            .brewing-steps ol {
+                margin-left: 20px;
+                padding-left: 20px;
+            }
+            
+            .brewing-steps li {
+                margin-bottom: 10px;
+            }
+            
+            .flavor-profile {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .flavor-item {
+                background-color: #af8c70;
+                color: #251313;
+                padding: 8px 15px;
+                border-radius: 20px;
+                margin: 5px;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 40px;
+                }
+                
+                h4 {
+                    font-size: 24px;
+                }
+                
+                .intro img {
+                    float: none;
+                    margin: 0 auto 20px;
+                    display: block;
+                    width: 100%;
+                    max-width: 400px;
+                    height: auto;
+                }
+                
+                .intro p {
+                    font-size: 20px;
+                    text-align: center;
+                }
+                
+                .modal-content {
+                    width: 95%;
+                    padding: 15px;
+                    margin: 10% auto;
+                }
+                
+                .modal-header {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .modal-img {
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Discover Your Perfect Brew</h1>
+            <h4>Every method is a <strong style="color: burlywood;"> mood.</strong> Every brew, a journey."</h4>
+            
+            <div class="intro">
+                <img src="./images/brewing.jpg" alt="Coffee brewing">
+                <p>In every swirl of steam and scent, a story begins. Brewing coffee isn't just a method — it's a quiet ritual, a gentle alchemy where water meets bean and time bends to taste. Whether bold as sunrise or smooth as a whispered song, each brew holds a moment crafted by your hands.<br> This is where the magic starts — one pour, one sip, one soul-stirring cup at a time.
+                </p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="card" data-brew="french-press">
+                    <div class="card-img-container">
+                        <img class="card-img" src="./images/french press.webp" alt="French Press coffee">
+                    </div>
+                    <div class="card-content">
+                        <h2>French Press</h2>
+                        <p>Bold, rich, and full-bodied with a velvety texture</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-brew="pour-over">
+                    <div class="card-img-container">
+                        <img class="card-img" src="./images/pour over.jpg" alt="Pour Over coffee">
+                    </div>
+                    <div class="card-content">
+                        <h2>Pour Over</h2>
+                        <p>Clean, bright, and delicate with complex flavor notes</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-brew="espresso">
+                    <div class="card-img-container">
+                        <img class="card-img" src="./images/espress.jpg" alt="Espresso shot">
+                    </div>
+                    <div class="card-content">
+                        <h2>Espresso</h2>
+                        <p>Intense, concentrated, with a beautiful crema layer</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-brew="cold-brew">
+                    <div class="card-img-container">
+                        <img class="card-img" src="./images/cold brew.jpg" alt="Cold Brew coffee">
+                    </div>
+                    <div class="card-content">
+                        <h2>Cold Brew</h2>
+                        <p>Smooth, sweet, with low acidity and chocolate notes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div id="brew-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="modal-header">
+                    <img class="modal-img" src="./images/brew.jpg" alt="Brewing method" id="modal-image">
+                    <h2 class="modal-title" id="modal-title">Brewing Method</h2>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // Brewing methods data
+            const brewingMethods = {
+                'french-press': {
+                    title: 'French Press',
+                    image: './images/french press.webp',
+                    description: 'The French Press, also known as a press pot or plunger pot, is a classic immersion brewing method that produces a rich, full-bodied coffee with robust flavors. It works by steeping coarse coffee grounds directly in hot water, then pressing a metal mesh filter through the mixture to separate the grounds from the liquid.',
+                    history: 'The French Press was patented by Italian designer Attilio Calimani in 1929, though similar designs had been in use since the mid-19th century. Despite its name, it\'s more commonly associated with Italian coffee culture than French.',
+                    steps: [
+                        'Heat water to 195-205°F (90-96°C)',
+                        'Coarsely grind coffee beans (similar to sea salt)',
+                        'Add coffee to the press (1:15 ratio of coffee to water)',
+                        'Pour hot water over the grounds',
+                        'Stir gently and place the lid on top without pressing down',
+                        'Steep for 4 minutes',
+                        'Slowly press the plunger down to separate grounds',
+                        'Pour immediately to prevent over-extraction'
+                    ],
+                    flavorProfile: ['Chocolate', 'Nuts', 'Earthy', 'Full-bodied', 'Rich'],
+                    tips: 'Pre-heating the French Press with hot water before brewing can help maintain the optimal temperature throughout the brewing process. Use a timer to ensure consistent results each time.'
+                },
+                'pour-over': {
+                    title: 'Pour Over',
+                    image: './images/pour over.jpg',
+                    description: 'Pour Over brewing is a manual method that gives the brewer complete control over the extraction process. Water is poured in a slow, steady stream over coffee grounds contained in a filter, allowing for precise extraction that highlights the delicate flavor notes in the coffee.',
+                    history: 'The Pour Over method was developed in Germany when Melitta Bentz invented the paper coffee filter in 1908. Her innovation revolutionized coffee brewing by creating a cleaner cup with less sediment.',
+                    steps: [
+                        'Heat water to 195-205°F (90-96°C)',
+                        'Grind coffee to medium-fine consistency',
+                        'Place filter in dripper and rinse with hot water',
+                        'Add coffee grounds (1:16 ratio of coffee to water)',
+                        'Pour just enough water to saturate the grounds (bloom)',
+                        'Wait 30 seconds for the coffee to bloom',
+                        'Continue pouring water in slow circular motions',
+                        'Allow all water to drain through the filter'
+                    ],
+                    flavorProfile: ['Bright', 'Floral', 'Fruity', 'Clear', 'Complex'],
+                    tips: 'The pour over method rewards precision. Use a gooseneck kettle for controlled pouring and a scale to measure both your coffee and water for consistently excellent results.'
+                },
+                'espresso': {
+                    title: 'Espresso',
+                    image: './images/espress.jpg',
+                    description: 'Espresso is a concentrated form of coffee produced by forcing pressurized hot water through finely-ground coffee beans. This method creates a small amount of intensely flavored coffee topped with a layer of crema - the hallmark of a properly extracted espresso.',
+                    history: 'Espresso was invented in Italy in the early 20th century. The first espresso machine was patented by Luigi Bezzera in 1901, aiming to reduce brewing time for workers during coffee breaks.',
+                    steps: [
+                        'Finely grind fresh coffee beans',
+                        'Distribute grounds evenly in the portafilter',
+                        'Tamp the grounds with firm, even pressure',
+                        'Lock the portafilter into the espresso machine',
+                        'Start the extraction process',
+                        'Aim for a 25-30 second extraction time',
+                        'Look for a honey-like flow with caramel color',
+                        'Stop when the stream lightens to a blonde color'
+                    ],
+                    flavorProfile: ['Intense', 'Sweet', 'Caramel', 'Concentrated', 'Complex'],
+                    tips: 'The perfect espresso is a balance of variables: grind size, dose, tamping pressure, water temperature, and extraction time. Small adjustments to any of these can dramatically change the flavor profile.'
+                },
+                'cold-brew': {
+                    title: 'Cold Brew',
+                    image: './images/cold brew.jpg',
+                    description: 'Cold brew coffee is made by steeping coarsely ground coffee beans in cold water for an extended period (12-24 hours). This slow extraction process creates a smooth, sweet coffee concentrate with lower acidity than hot-brewed methods.',
+                    history: 'While cold brew has gained popularity in recent years, it has roots in 17th century Japan, where Dutch traders introduced a cold brewing method. Japanese cold brew, known as "Kyoto-style" coffee, used a slow drip tower system.',
+                    steps: [
+                        'Coarsely grind coffee beans',
+                        'Combine coffee and cold water in a container (1:4 ratio)',
+                        'Stir gently to ensure all grounds are wet',
+                        'Cover and refrigerate for 12-24 hours',
+                        'Strain the coffee through a fine mesh or filter',
+                        'Store the concentrate in the refrigerator',
+                        'Dilute with water or milk to taste (typically 1:1)',
+                        'Serve over ice or as desired'
+                    ],
+                    flavorProfile: ['Smooth', 'Sweet', 'Chocolate', 'Low acidity', 'Mellow'],
+                    tips: 'Cold brew coffee concentrate can be stored in the refrigerator for up to two weeks. Experiment with different steeping times to find your perfect balance - longer steeping produces stronger flavor but may increase bitterness.'
+                }
+            };
+            
+            // Get modal elements
+            const modal = document.getElementById('brew-modal');
+            const closeButton = document.querySelector('.close-button');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalBody = document.getElementById('modal-body');
+            
+            // Add click event listeners to all cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const brewMethod = this.getAttribute('data-brew');
+                    openModal(brewMethod);
+                });
+            });
+            
+            // Close modal when clicking the close button
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Function to open modal with specific brewing method content
+            function openModal(brewMethod) {
+                const method = brewingMethods[brewMethod];
+                if (!method) return;
+                
+                // Set modal title and image
+                modalTitle.textContent = method.title;
+                modalImage.src = method.image;
+                modalImage.alt = method.title;
+                
+                // Create modal content
+                let content = `
+                    <p>${method.description}</p>
+                    
+                    <h3>A Brief History</h3>
+                    <p>${method.history}</p>
+                    
+                    <h3>How to Brew</h3>
+                    <div class="brewing-steps">
+                        <ol>
+                            ${method.steps.map(step => `<li>${step}</li>`).join('')}
+                        </ol>
+                    </div>
+                    
+                    <h3>Flavor Profile</h3>
+                    <div class="flavor-profile">
+                        ${method.flavorProfile.map(flavor => `<span class="flavor-item">${flavor}</span>`).join('')}
+                    </div>
+                    
+                    <h3>Pro Tips</h3>
+                    <p>${method.tips}</p>
+                `;
+                
+                // Set modal body content
+                modalBody.innerHTML = content;
+                
+                // Display modal
+                modal.style.display = 'block';
+            }
+        </script>
+    </body>
+</html>

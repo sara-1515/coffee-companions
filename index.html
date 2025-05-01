@@ -1,0 +1,494 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>My Coffee Companions</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A website dedicated to coffee lovers, featuring various coffee companions.">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>        
+    </head>
+    <style>
+        body{
+            background-color: #251313; font-family: Arial, sans-serif; color: #ffffff;
+        }
+        .navbar{
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: #ffffff;
+            background-color: #ffff3333;
+        }
+
+        .nav-pills .nav-link, .nav-pills .show>.nav-link{
+            color: #ffffff;
+        }
+        
+
+        .navbar a{
+            color: #ffffff;
+        }
+
+        .navbar a :hover{
+            color: #ffff3333;
+        }
+
+        .nav-link {
+            display: block;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .container{
+            background-color: #251313;
+            max-width: 100%;
+            height: 750px;
+            display: flex;
+            margin-right: 0%;
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Space between heading and image */
+            padding: 0 50px;
+
+        }
+
+        .coffee-image img {
+            height: 500px;
+            width: auto;
+            border-radius: 20px;
+            margin-right: 300px
+        }
+        .coffee-heading {
+            font-family: 'Dancing Script', cursive;
+            color: var(--accent-glow);
+            text-shadow: 0 0 10px rgba(212, 167, 106, 0.3);
+            font-size: 100px;
+            align-content: center;
+            margin-right: 90px;
+            margin-left: 90px;
+
+        }
+
+        .coffee-heading h1{
+            color: var(--accent-glow);
+            text-shadow: 0 0 10px rgba(212, 167, 106, 0.3);
+            font-size: 100px;
+
+        }
+
+        .container img{
+            float: left;
+            height: 300px;
+            width: 600px;
+            margin-left: 60px;
+            margin-top: 100px;
+        }
+        .card{
+            width: 20%;
+            height:700px;
+            padding: 20px;
+            margin:30px;
+            margin-bottom: 200px;
+            border-radius: 30px;
+            background-color: rgb(217, 181, 130);
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .card-text{
+            font-family: 'Dancing Script', cursive;
+            color: #140303;
+            font-size: 25px;
+        }
+        .card-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: nowrap;
+            width: 100%;
+            padding-bottom: 300px;
+        }
+        .card-image{
+            height: 200px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+        .card h2{
+            font-family: 'Dancing Script', cursive;
+            color: rgb(71, 45, 13);
+
+        }
+
+        .features-container{
+            background-color: #251313;
+            font-size: 60px;
+        }
+
+        .card-features{
+            height: 400px;
+            width: 400px;
+            background-color: #d9b582;
+            border-radius: 40px;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin: 50px;
+
+        }
+        .card-features:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+        .card-features h2{
+            font-family: 'Dancing Script', cursive;
+            align-items: center;
+            align-content: center;
+            margin: 30px;
+            color: #251313;
+            font-size: 60px;
+        }
+
+        #features > div > div > div > p{
+            margin-left: 30px;
+        }
+        .features-container h1{
+            font-family: 'Dancing Script', cursive;
+            font-size: 90px;
+            color: #d9b582;
+            margin-top: 0px;
+            margin-left: 60px;
+
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            margin-right: 300px;
+        }
+        
+        .story-paragraph {
+            font-family: 'Dancing Script', cursive;
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 1.6;
+            margin-top: 20px;
+            max-width: 900px;
+        }
+
+        .coffee-lovers{
+            height: 400px;
+            width: 400px;
+            background-color: #251313;
+            border-radius: 40px;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin: 50px;
+        }
+
+        .lovers-container{
+            background-color: burlywood;
+        }
+
+        .lovers-text{
+            font-family: "Comic Relief", system-ui;
+            align-items: center;
+            align-content: center;
+            margin: 30px;
+            color: burlywood;
+
+        }
+
+        .review-card {
+            height: 500px;
+            width: 300px;
+            background-color: #220000;
+            color: burlywood;
+            border-radius: 30px;
+            padding: 30px;
+            margin: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .subscription-section{
+            background-color: #251313;
+            color: #d9b582;
+            padding-top: 30px;
+        }
+
+        .subscription-section h2 {
+            font-family: 'Dancing Script', cursive;
+            color: burlywood;
+            font-size: 60px;
+            margin-bottom: 30px;
+            margin-left: 60px;
+        }
+        
+        .subscription-form {
+            max-width: 500px;
+            margin-left: 40%;
+
+        }
+        
+        .subscription-form input {
+            width: 70%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        
+        .subscription-form button {
+            background-color: #d9b582;
+            color: #251313;
+            font-family: 'Dancing Script', cursive;
+            border: none;
+            margin: 30px;
+            border-radius: 20px 20px 20px 20px;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .subscription-form button:hover {
+            background-color: #ffffff;
+        }
+
+        footer {
+            background-color: #1a0d0d;
+            color: #d9b582;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section {
+            width: 300px;
+            margin: 20px;
+        }
+        
+        .footer-section h3 {
+            color: var(--light-brown);
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: #d9b582;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-glow);
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #a0a0a0;
+        }
+        
+        
+        
+
+    </style>
+    <body>
+        <header class="navbar">
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#types" class="nav-link">Types</a></li>
+              <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+            </ul>
+        </header>
+        <div class="container">
+
+            <h1 class="coffee-heading">My coffee companions</h1>
+            <div class="coffee-image">
+                <img src="./images/coffee.jpeg">
+            </div>
+        </div>
+        <div id="about" class="container">
+            <img class="coffee-image" src="./images/story.jpeg" style="border-radius: 40px; ">
+            <div class="story-content">
+                <h1 class="coffee-heading">Our Story</h1>
+                <p class="story-paragraph"><strong>                    Born out of my deep love for coffee, this website is my very first creation as a web developer—a space designed for fellow coffee lovers to explore and celebrate the world of specialty coffee. Inspired by the journey of Coffee Companions, which was founded in 2025 by passionate enthusiasts in Portland, I wanted to build something that not only honors their mission of ethical sourcing and rich storytelling, but also reflects my own passion for design, development, and great brews. From bean to cup, every page here is a blend of tradition, craftsmanship, and the joy of learning something new—both in coffee and in code.
+                </strong>
+                </p>
+            </div>
+        </div>
+        <div id="types" class="slider-container">
+        <div class="slider-container">
+            <div class="card-container">
+                <div class="card">
+                    <h2><strong>Ethiopian Yirgacheffe</strong></h2>
+                    <img src="./images/ethiopian.jpeg" class="card-image">
+                    <div class="card-text">
+                        <p>This light-roasted coffee offers a delightful complexity with bright citrus notes and floral undertones. The distinctive blueberry aroma is unmistakable, and it finishes with a pleasant tea-like quality. Perfect for pour-over brewing methods that highlight its delicate flavors.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2><strong>Colombian Supremo</strong></h2>
+                    <img src="./images/columbian.jpeg" class="card-image">
+                    <div class="card-text">
+                        <p>A well-balanced medium roast with nutty undertones and caramel sweetness. The chocolate notes come through nicely with minimal acidity, making it approachable for daily drinking. Works beautifully in both drip machines and French press.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2><strong>Colombian Supremo</strong></h2>
+                    <img src="./images/sumatra.jpeg" class="card-image">
+                    <div class="card-text">
+                        <p>This dark roast delivers a full-bodied experience with earthy, woody characteristics. The low acidity and hints of spice make it distinctive, while its rich, syrupy body stands up well to milk. Best for espresso or French press brewing.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2><strong>Jamaican Blue Mountain</strong></h2>
+                    <img src="./images/jamaican.jpeg" class="card-image">
+                    <div class="card-text">
+                        <p>A premium coffee known for its exceptional smoothness and clean taste profile. Offers subtle notes of chocolate and a mild, sweet flavor with virtually no bitterness. The balanced acidity and nutty undertones make every sip a luxurious experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="features" class="features-container">
+            <h1>Features</h1>
+            <div class="card-container">
+                <div class="card-features">
+                    <a href="coffee-quiz.html" class="feature-link" style="color: #d9b582;">
+                        <i class="fas fa-mug-hot" style="display: flex; align-items: center; align-content: center; justify-content: center; color:#251313"></i>
+                        <h2><strong> Coffee Quiz</strong></h2>
+                    </a>
+                </div>
+                <div class="card-features">
+                    <a href="brewing.html" class="feature-link" style="color: #d9b582;">
+                        <i class="fas fa-brush" style="display: flex; align-items: center; align-content: center; justify-content: center; color:#251313"></i>
+                        <h2><strong>Brewing Methods</strong></h2>
+                    </a>
+                </div>
+                <div class="card-features">
+                    <a href="coffee-origin.html" class="feature-link" style="color: #d9b582;">
+                        <i class="fas fa-globe-americas" style="display: flex; align-items: center; align-content: center; justify-content: center; color:#251313"></i>
+                        <h2><strong>Coffee Origin</strong></h2>
+                    </a>
+                </div>
+                <div class="card-features">
+                    <a href="coffee-pairing-guide.html" class="feature-link" style="color: #d9b582;">
+                        <i class="fas fa-utensils" style="display: flex; align-items: center; align-content: center; justify-content: center; color:#251313"></i>
+                        <h2><strong>Coffee Pairing Guide</strong></h2>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div id="reviews" class="features-container" style="margin-top: 0px;">
+            <h1 style="margin-left: 70%;">What Coffee Lovers Say</h1>
+            <div class="card-container">
+                <div class="review-card">
+                    <div class="lovers-text">
+                        <h4><strong>I love how this website is all about coffee</strong></h4><br>
+                        <h5 style="margin-right: 20px;"><strong><em>- John Doe</em></strong></h5>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="lovers-text">
+                        <h4><strong>Coffee is a way of life for me.</strong></h4><br>
+                        <h5 style="margin-right: 20px;"><strong><em>- Jane Doe</em></strong></h5>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="lovers-text">
+                        <h4><strong>It's so amazing how we can mix flavours to make an amazing unique coffee</strong></h4><br>
+                        <h5 style="margin-right: 20px;"><strong><em>- John Doe</em></strong></h5>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="lovers-text">
+                        <h4><strong>Those who live coffee are my friends without introduction.</strong></h4><br>
+                        <h5 style="margin-right: 20px;"><strong><em>- John Doe</em></strong></h5>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="subscription-section">
+                <h2>Join Our Coffee Community</h2>
+                <p style="color: #d9b582; max-width: 600px; margin: 0 auto 30px; font-size: 30px; font-family: 'Dancing Script', cursive;">
+                    Sign up for our newsletter to receive brewing tips, special offers, and updates on new coffee varieties.
+                </p>
+                <div class="subscription-form">
+                    <form>
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p>Email: coffeelovers@gmail.com</p>
+                        <p>Address: XYZ Street , Pune</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Coffee Companions. All Rights Reserved.</p>
+                </div>
+            </footer>
+            
+    </body>
+</html>
