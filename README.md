@@ -2,7 +2,6 @@
 
 A modern, responsive website showcasing Brewing Methods, Types, Fun Quiz, Origin and Coffee Pairing Guide
 
-![Coffee Haven Website Preview](https://coffee-companions.vercel.app/)
 
 ## 🚀 Features
 
@@ -36,7 +35,7 @@ A modern, responsive website showcasing Brewing Methods, Types, Fun Quiz, Origin
 
 ## 📱 Live Demo
 
-Visit the live website: [Coffee Haven](https://coffee-companions.vercel.app/)
+Visit the live website: [Coffee Companions](https://coffee-companions.vercel.app/)
 
 
 
